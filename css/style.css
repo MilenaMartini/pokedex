@@ -40,11 +40,14 @@ main {
     position: absolute;
     font-weight: 600;
     color: #aaa;
-    bottom: 43%;
+    bottom: 41%;
     top: 54.5;
     right: 27%;
     font-size: clamp(8px, 5vw, 25px);
 }
+
+
+
 
 .pokemon__name{
     color: #3a444d;
@@ -61,11 +64,12 @@ main {
 .input__search{
     width: 100%;
     padding: 4%;
+    outline: none;
     border: 2px solid #333;
     border-radius: 5px;
     font-weight: 600;
     color: #3a444d;
-    font-size: clamp(8px, 5vw, 1px);
-    box-shadow: -5px 4px 10px #888, -10px 7px #333 ;
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333 ;
 }
 
