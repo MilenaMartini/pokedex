@@ -32,7 +32,7 @@ main {
      position: absolute;
      bottom: 50%;
      left: 50%;
-     transform: translate(-63%, 20%);
+     transform: translate(-63%, -10%);
      height: 18%;
 } 
 
