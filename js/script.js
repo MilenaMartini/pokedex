@@ -30,6 +30,7 @@ const renderPokemon = async (pokemon) => {
     const data = await fetchPokemon(pokemon);
 
     if (data){
+    pokemonImage.style.display = 'block';    
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
     //caminho para a imgem
@@ -37,7 +38,9 @@ const renderPokemon = async (pokemon) => {
 
     input.value = '';
     } else {
+        pokemonImage.style.display = 'none';
         pokemonName.innerHTML = 'não encontrado :('
+        pokemonNumber.innerHTML = '';
     }
 }
 
@@ -45,17 +48,21 @@ const renderPokemon = async (pokemon) => {
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
 
-    renderPokemon(input.value.searchPokemon);
+    renderPokemon(input.value.toLowerCase());
 
+});
+
+btPrev.addEventListener('click', () =>{
+    if (searchPokemon > 1) {
+        searchPokemon -= 1;
+         renderPokemon(searchPokemon);
+    }
 });
 
 
 btNext.addEventListener('click', () =>{
-    alert('Next clicked')
-});
+    searchPokemon += 1;
+     renderPokemon(searchPokemon);
+    });
 
-btPrev.addEventListener('click', () =>{
-    alert('Prev clicked')
-});
-
-renderPokemon('1');
+renderPokemon(searchPokemon);
